@@ -1,0 +1,122 @@
+{
+  "main": {
+    "name": "Abhishek Kumar",
+    "occupation": "Software Development Engineer",
+    "description": "A computer enthusiast passionate about software development. Experienced in working with teams in different software development stages, ensuring high quality and fulfillment of business requirements.",
+    "image": "profilepic.jpg",
+    "bio": "Graduated from IIT(ISM) Dhanbad (Batch of 2017), with a strong foundation in programming and software engineering. Proficient in a variety of platforms, languages and their respective frameworks, with an innate ability to learn and master new technoligies.",
+    "contactmessage": "Actively seeking for jobs. Drop your details for inquiry",
+    "email": "abhishekism0010@gmail.com",
+    "phone": "+91-98877006278",
+    "address": {
+      "street": "Kankadbagh",
+      "city": "Patna ",
+      "state": "Bihar",
+      "zip": "800020"
+    },
+    "website": "<WEBSITE>",
+    "resumedownload": "<GOOGLE DRIVE LINK>",
+    "social": [
+      {
+        "name": "facebook",
+        "url": "http://facebook.com/abhishek0010",
+        "className": "fa fa-facebook"
+      },
+      {
+        "name": "twitter",
+        "url": "http://twitter.com/_a_k_0_0_1_0_",
+        "className": "fa fa-twitter"
+      },
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/abhishehk0010/",
+        "className": "fa fa-linkedin"
+      },
+      {
+        "name": "instagram",
+        "url": "http://instagram.com/0010ak",
+        "className": "fa fa-instagram"
+      },
+      {
+        "name": "github",
+        "url": "http://github.com/abhishek0010",
+        "className": "fa fa-github"
+      }
+    ]
+  },
+  "resume": {
+    "skillmessage": "Confident in these:",
+    "education": [
+      {
+        "school": "Indian Institute of Technology(ISM), Dhanbad",
+        "degree": "Bachelor of Technology in Computer Science & Engineering",
+        "graduated": "May 2017",
+        "description": "Graduated with OGPA of 7.64"
+      }
+    ],
+    "work": [
+      {
+        "company": "SpillBox Inc",
+        "title": "Software Engineer",
+        "years": "--",
+        "description": "Responsible for infrastructure management, cache testing and authentication microservice"
+      },
+      {
+        "company": "Buring Glass Technologies",
+        "title": "Advanced Software Engineer",
+        "years": "--",
+        "description": "Responsible for database migration with validation and scraping infrastructure development and management"
+      },
+      {
+        "company": "Juniper Networks",
+        "title": "Software Development Intern",
+        "years": "--",
+        "description": "Responsible for creation of netlink activity monitor for a cloud orchestration platform"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Java",
+        "level": "70%"
+      },
+      {
+        "name": "Python",
+        "level": "70%"
+      },
+      {
+        "name": "ReactJs",
+        "level": "50%"
+      },
+      {
+        "name": "Javascript",
+        "level": "60%"
+      },
+      {
+        "name": "Dev-Ops",
+        "level": "50%"
+      },
+      {
+        "name": "C++",
+        "level": "60%"
+      },
+      {
+        "name": "GO",
+        "level": "50%"
+      },
+      {
+        "name": "Swift",
+        "level": "50%"
+      },
+      {
+        "name": "MY-SQL",
+        "level": "70%"
+      }
+    ]
+  },
+  "portfolio": {
+    "projects" : []
+  },
+  "testimonials": {
+    "testimonials": []
+  }
+}
