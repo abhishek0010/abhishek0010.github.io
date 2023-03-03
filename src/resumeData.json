@@ -7,12 +7,12 @@
     "bio": "Graduated from IIT(ISM) Dhanbad (Batch of 2017), with a strong foundation in programming and software engineering. Proficient in a variety of platforms, languages and their respective frameworks, with an innate ability to learn and master new technoligies.",
     "contactmessage": "Actively seeking for jobs. Drop your details for inquiry",
     "email": "abhishekism0010@gmail.com",
-    "phone": "+91-98877006278",
+    "phone": "+91-8877006278",
     "address": {
-      "street": "Kankadbagh",
-      "city": "Patna ",
-      "state": "Bihar",
-      "zip": "800020"
+      "street": "Bavdhan",
+      "city": "Pune",
+      "state": "Maharastra",
+      "zip": "411021"
     },
     "website": "<WEBSITE>",
     "resumedownload": "<GOOGLE DRIVE LINK>",
@@ -55,6 +55,12 @@
       }
     ],
     "work": [
+      {
+        "company": "INDIVIDUAL",
+        "title": "Freelance Developer",
+        "years": "--",
+        "description": "Developed and deployed websites using latest frontend and backend technologies"
+      },
       {
         "company": "SpillBox Inc",
         "title": "Software Engineer",
