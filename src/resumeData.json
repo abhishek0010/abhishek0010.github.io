@@ -15,7 +15,7 @@
       "zip": "411021"
     },
     "website": "<WEBSITE>",
-    "resumedownload": "https://drive.google.com/file/d/1WnEMfuMd-7DYmzG9ElPD6GxIveHBg466/view?usp=share_link",
+    "resumedownload": "https://drive.google.com/file/d/1lDVF5ZjUI-EpNdgI4Zguv2FTDJq2Bts_/view?usp=share_link",
     "social": [
       {
         "name": "facebook",
@@ -59,7 +59,7 @@
         "company": "INDIVIDUAL",
         "title": "Freelance Developer",
         "years": "--",
-        "description": "Developed and deployed websites using latest frontend and backend technologies"
+        "description": "Developed responsive and scalable web applications using React, CSS, & Node resulting in increased user engagement."
       },
       {
         "company": "SpillBox Inc",
@@ -83,7 +83,7 @@
     "skills": [
       {
         "name": "Java",
-        "level": "70%"
+        "level": "80%"
       },
       {
         "name": "Python",
@@ -91,7 +91,7 @@
       },
       {
         "name": "ReactJs",
-        "level": "50%"
+        "level": "60%"
       },
       {
         "name": "Javascript",
@@ -99,11 +99,11 @@
       },
       {
         "name": "Dev-Ops",
-        "level": "50%"
+        "level": "60%"
       },
       {
         "name": "C++",
-        "level": "60%"
+        "level": "70%"
       },
       {
         "name": "GO",
