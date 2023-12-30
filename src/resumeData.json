@@ -1,18 +1,18 @@
 {
   "main": {
     "name": "Abhishek Kumar",
-    "occupation": "Software Development Engineer",
-    "description": "A computer enthusiast passionate about software development. Experienced in working with teams in different software development stages, ensuring high quality and fulfillment of business requirements.",
+    "occupation": "SDE / Solutions Architect",
+    "description": "A tech enthusiast passionate about software development and all thing tech. Experienced to work with teams in different software development stages, ensuring high quality output and satisfactory fulfillment of business requirements.",
     "image": "profilepic.jpg",
-    "bio": "Graduated from IIT(ISM) Dhanbad (Batch of 2017), with a strong foundation in programming and software engineering. Proficient in a variety of platforms, languages and their respective frameworks, with an innate ability to learn and master new technoligies.",
-    "contactmessage": "Actively seeking for jobs. Drop your details for inquiry",
+    "bio": "Graduated from IIT(ISM) Dhanbad (Batch of 2017), with a strong foundation in programming, software engineering and systems design and architecture. Proficient in a variety of platforms, languages and their respective frameworks, with an innate ability to learn and master new technoligies.",
+    "contactmessage": "Open to exciting offers. Drop your details for inquiry",
     "email": "abhishekism0010@gmail.com",
     "phone": "+91-8877006278",
     "address": {
-      "street": "Bavdhan",
-      "city": "Pune",
-      "state": "Maharastra",
-      "zip": "411021"
+      "street": "HSR Layout, Sector 6",
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "zip": "560102"
     },
     "website": "<WEBSITE>",
     "resumedownload": "https://drive.google.com/drive/folders/1vU_MZO6xRIDfucqQmwxoDQVvLXSaIWeG?usp=sharing",
@@ -56,6 +56,12 @@
     ],
     "work": [
       {
+        "company": "Nirmaan",
+        "title": "SDE/Solutions Architect",
+        "years": "--",
+        "description": "In process of building a revolutionary commercial project planning & tracking platform"
+      },
+      {
         "company": "INDIVIDUAL",
         "title": "Freelance Developer",
         "years": "--",
@@ -83,10 +89,18 @@
     "skills": [
       {
         "name": "Java",
-        "level": "80%"
+        "level": "70%"
       },
       {
         "name": "Python",
+        "level": "90%"
+      },
+      {
+        "name": "AWS/GCP",
+        "level": "70%"
+      },
+      {
+        "name": "Backend",
         "level": "70%"
       },
       {
