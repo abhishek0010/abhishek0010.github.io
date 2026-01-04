@@ -1,154 +1,45 @@
-import React from 'react';
-import ReactGA from 'react-ga4';
-import './App.css';
+import React, { Suspense } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ThemeProvider, Layout } from '@/components/layout';
+import NotFound from '@/pages/NotFound';
 
-import * as resumedata from './resumeData.json';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
-import About from './Components/About';
-import Resume from './Components/Resume';
-import Contact from './Components/Contact';
-import Testimonials from './Components/Testimonials';
-import Portfolio from './Components/Portfolio';
+// Lazy load page components for code splitting
+const Home = React.lazy(() => import('@/pages/Home'));
+const About = React.lazy(() => import('@/pages/About'));
+const Blog = React.lazy(() => import('@/pages/Blog'));
+const BlogPost = React.lazy(() => import('@/pages/BlogPost'));
+const Projects = React.lazy(() => import('@/pages/Projects'));
+const Lists = React.lazy(() => import('@/pages/Lists'));
+const ListDetail = React.lazy(() => import('@/pages/ListDetail'));
 
-type ResumeData = {
-  main: {
-    name: string,
-    occupation: string,
-    description: string,
-    image: string,
-    bio: string,
-    contactmessage: string,
-    email: string,
-    address: {
-      street: string,
-      city: string,
-      state: string,
-      zip: string,
-    },
-    website: string,
-    resumedownload: string,
-    social: 
-      {
-        name: string,
-        url: string,
-        className: string,
-      }[]
-  },
-  resume: {
-    skillmessage: string,
-    education:
-      {
-        school: string,
-        degree: string,
-        graduated: string,
-        description: string
-      }[],
-    work:
-      {
-        company: string,
-        title: string,
-        years: string,
-        description: string
-      }[],
-    skills:
-      {
-        name: string,
-        level: string
-      }[]
-  },
-  portfolio: {
-    projects: 
-      {
-        title: string,
-        category: string,
-        image: string,
-        url: string
-      }[]
-  },
-  testimonials: {
-    testimonials:
-      {
-        text: string,
-        user: string
-      }[]
-  }
+// Loading fallback component
+function PageLoader() {
+  return (
+    <div className="min-h-[60vh] flex items-center justify-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+    </div>
+  );
 }
 
-type NavItems = {
-   name: string,
-   link: string
+export default function App() {
+  return (
+    <BrowserRouter>
+      <ThemeProvider>
+        <Layout>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/lists" element={<Lists />} />
+              <Route path="/lists/:category" element={<ListDetail />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </Layout>
+      </ThemeProvider>
+    </BrowserRouter>
+  );
 }
-
-interface AppProps {
-};
-
-interface AppState {
-
-  foo: string,
-  resumeData: ResumeData,
-  navProps: NavItems[]
-}
-class App extends React.Component<AppProps, AppState> {
-
-    state: AppState = {
-      foo: 'bar',
-      resumeData: resumedata,
-      navProps: {} as NavItems[]
-    };
-
-    constructor(props: AppProps) {
-      super(props);
-      ReactGA.initialize('G-88NECJ3PYR');
-      ReactGA.send('pageview');
-      
-    }
-
-  componentDidMount(){
-    this.setState({navProps: this.createNavProps(this.state.resumeData)});
-  }
-
-  createNavProps(resumeData: ResumeData):NavItems[] {
-    let navProps: NavItems[] = [
-      {
-        name: "Home",
-        link: "home"
-      },
-      {
-        name: "About",
-        link: "about"
-      },
-      {
-        name: "Resume",
-        link: "resume"
-      },
-    ]
-    if(Object.keys(resumeData.portfolio.projects).length!==0) {
-      navProps.push({name: "Portfolio", link: "portfolio"});
-    }
-    if(Object.keys(resumeData.testimonials.testimonials).length!==0) {
-      navProps.push({name: "Testimonials", link: "testionials"});
-    }
-    navProps.push({name:"Contact", link: "contact"});
-
-    return navProps;
-  }
-
-  render() {
-    
-    console.log(this.state.navProps);
-    return (
-      <div className="App">
-        <Header data={this.state.resumeData.main} navProps={this.state.navProps}/>
-        <About data={this.state.resumeData.main}/>
-        <Resume data={this.state.resumeData.resume}/>
-        <Portfolio data={this.state.resumeData.portfolio}/>
-        <Testimonials data={this.state.resumeData.testimonials}/>
-        <Contact data={this.state.resumeData.main}/>
-        <Footer data={this.state.resumeData.main}/>
-      </div>
-    );
-  }
-}
-
-export default App;

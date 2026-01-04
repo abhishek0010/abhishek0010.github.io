@@ -1,54 +1,45 @@
 {
   "name": "abhishek0010.github.io",
-  "homepage": "https://abhishek0010.github.io",
-  "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.11.41",
-    "@types/react": "^18.0.14",
-    "@types/react-dom": "^18.0.5",
-    "animate.css": "^4.1.1",
-    "gh-pages": "^4.0.0",
-    "jquery": "^3.6.0",
-    "particles-bg": "^2.5.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-ga4": "^1.4.1",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.7.4",
-    "web-vitals": "^2.1.4"
-  },
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "braces": "^3.0.3",
+    "clsx": "^2.1.1",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.562.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.11.0",
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
-    "@types/jquery": "^3.5.14"
+    "@mdx-js/react": "^3.1.1",
+    "@mdx-js/rollup": "^3.1.1",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/mdx": "^2.0.13",
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.26",
+    "postcss": "^8.4.38",
+    "rehype-highlight": "^7.0.2",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-mdx-frontmatter": "^5.2.0",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.4.0",
+    "vite": "^5.4.21"
   }
 }

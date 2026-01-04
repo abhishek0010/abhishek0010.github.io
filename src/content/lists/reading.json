@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Designing Data-Intensive Applications",
+    "author": "Martin Kleppmann",
+    "type": "book",
+    "status": "completed",
+    "rating": 5,
+    "url": "https://dataintensive.net/",
+    "notes": "Essential reading for backend engineers. Covers distributed systems, data storage, and stream processing."
+  },
+  {
+    "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+    "author": "Robert C. Martin",
+    "type": "book",
+    "status": "completed",
+    "rating": 4,
+    "url": "https://www.oreilly.com/library/view/clean-code-a/9780136083238/",
+    "notes": "Foundational book on writing maintainable and readable code."
+  },
+  {
+    "title": "The Pragmatic Programmer",
+    "author": "David Thomas & Andrew Hunt",
+    "type": "book",
+    "status": "completed",
+    "rating": 5,
+    "url": "https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/",
+    "notes": "Timeless advice on software development practices and career growth."
+  },
+  {
+    "title": "System Design Interview",
+    "author": "Alex Xu",
+    "type": "book",
+    "status": "reading",
+    "rating": null,
+    "url": "https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF",
+    "notes": "Great resource for preparing system design interviews with real-world examples."
+  },
+  {
+    "title": "Building Microservices",
+    "author": "Sam Newman",
+    "type": "book",
+    "status": "want-to-read",
+    "rating": null,
+    "url": "https://www.oreilly.com/library/view/building-microservices-2nd/9781492034018/",
+    "notes": "On my list for understanding microservices architecture patterns."
+  }
+]

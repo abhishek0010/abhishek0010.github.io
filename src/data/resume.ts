@@ -1,0 +1,107 @@
+import type { ResumeData } from '../types';
+
+export const resumeData: ResumeData = {
+  main: {
+    name: "Abhishek Kumar",
+    occupation: "SDE / Solutions Architect",
+    description: "A tech enthusiast passionate about software development and all things tech. Experienced working with teams in different software development stages, ensuring high quality output and satisfactory fulfillment of business requirements.",
+    image: "profilepic.jpg",
+    bio: "Graduated from IIT(ISM) Dhanbad (Batch of 2017), with a strong foundation in programming, software engineering and systems design and architecture. Proficient in a variety of platforms, languages and their respective frameworks, with an innate ability to learn and master new technologies.",
+    contactMessage: "Open to exciting offers. Drop your details for inquiry",
+    email: "abhishekism0010@gmail.com",
+    phone: "+91-8877006278 / 7003912911",
+    address: {
+      street: "HSR Layout, Sector 6",
+      city: "Bangalore",
+      state: "Karnataka",
+      zip: "560102"
+    },
+    website: "https://abhishek0010.github.io",
+    resumeDownload: "https://drive.google.com/drive/folders/1vU_MZO6xRIDfucqQmwxoDQVvLXSaIWeG?usp=sharing",
+    social: [
+      {
+        name: "facebook",
+        url: "http://facebook.com/abhishek0010",
+        className: "fa fa-facebook"
+      },
+      {
+        name: "twitter",
+        url: "http://twitter.com/_a_k_0_0_1_0_",
+        className: "fa fa-twitter"
+      },
+      {
+        name: "linkedin",
+        url: "https://www.linkedin.com/in/abhishek0010/",
+        className: "fa fa-linkedin"
+      },
+      {
+        name: "instagram",
+        url: "http://instagram.com/0010ak",
+        className: "fa fa-instagram"
+      },
+      {
+        name: "github",
+        url: "http://github.com/abhishek0010",
+        className: "fa fa-github"
+      }
+    ]
+  },
+  resume: {
+    skillMessage: "Confident in these:",
+    education: [
+      {
+        school: "Indian Institute of Technology(ISM), Dhanbad",
+        degree: "Bachelor of Technology in Computer Science & Engineering",
+        graduated: "May 2017",
+        description: "Graduated with OGPA of 7.64"
+      }
+    ],
+    work: [
+      {
+        company: "Nirmaan",
+        title: "SDE/Solutions Architect",
+        years: "Present",
+        description: "In process of building a revolutionary commercial project planning & tracking platform"
+      },
+      {
+        company: "Individual",
+        title: "Freelance Developer",
+        years: "Ongoing",
+        description: "Developed responsive and scalable web applications using React, CSS, & Node resulting in increased user engagement."
+      },
+      {
+        company: "SpillBox Inc",
+        title: "Software Engineer",
+        years: "2021-2022",
+        description: "Responsible for infrastructure management, cache testing and authentication microservice"
+      },
+      {
+        company: "Burning Glass Technologies",
+        title: "Advanced Software Engineer",
+        years: "2019-2021",
+        description: "Responsible for database migration with validation and scraping infrastructure development and management"
+      },
+      {
+        company: "Juniper Networks",
+        title: "Software Development Intern",
+        years: "2016",
+        description: "Responsible for creation of netlink activity monitor for a cloud orchestration platform"
+      }
+    ],
+    skills: [
+      { name: "Java", level: "70%" },
+      { name: "Python", level: "90%" },
+      { name: "AWS/GCP", level: "70%" },
+      { name: "Backend", level: "70%" },
+      { name: "ReactJs", level: "60%" },
+      { name: "Javascript", level: "60%" },
+      { name: "Dev-Ops", level: "60%" },
+      { name: "C++", level: "70%" },
+      { name: "GO", level: "50%" },
+      { name: "Swift", level: "50%" },
+      { name: "MySQL", level: "70%" }
+    ]
+  }
+};
+
+export default resumeData;
