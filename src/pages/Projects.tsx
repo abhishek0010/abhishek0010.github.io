@@ -18,10 +18,10 @@ function TagButton({
     <button
       onClick={onClick}
       className={cn(
-        'px-3 py-1 rounded-full text-sm font-medium transition-colors',
+        'px-3 py-1 rounded-sharp text-sm font-mono transition-all duration-200',
         isActive
-          ? 'bg-blue-600 text-white'
-          : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+          ? 'bg-accent text-white'
+          : 'tag hover:border-accent hover:text-accent'
       )}
     >
       {tag}
@@ -35,21 +35,19 @@ function ProjectCard({ project }: { project: Project }) {
     <article className="group relative">
       <div
         className={cn(
-          'h-full flex flex-col p-6 rounded-xl border bg-white dark:bg-gray-800 transition-all duration-200',
-          'border-gray-200 dark:border-gray-700',
-          'hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg',
-          project.featured && 'ring-2 ring-blue-500/20 dark:ring-blue-400/20'
+          'h-full flex flex-col card-terminal p-5 hover-glow',
+          project.featured && 'ring-1 ring-accent/30'
         )}
       >
         {/* Featured badge */}
         {project.featured && (
-          <div className="absolute -top-2 -right-2 px-2 py-0.5 rounded-full text-xs font-semibold bg-blue-600 text-white shadow-sm">
-            Featured
+          <div className="absolute -top-2 -right-2 px-2 py-0.5 rounded-sharp text-xs font-mono bg-accent text-white shadow-glow-sm">
+            featured
           </div>
         )}
 
         {/* Image or placeholder */}
-        <div className="mb-4 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-700 aspect-video flex items-center justify-center">
+        <div className="mb-4 rounded-sharp overflow-hidden bg-gray-100 dark:bg-terminal-surface aspect-video flex items-center justify-center border border-gray-200 dark:border-terminal-border">
           {project.image ? (
             <img
               src={project.image}
@@ -57,43 +55,40 @@ function ProjectCard({ project }: { project: Project }) {
               className="w-full h-full object-cover"
             />
           ) : (
-            <Folder className="w-12 h-12 text-gray-400 dark:text-gray-500" />
+            <Folder className="w-10 h-10 text-gray-400 dark:text-gray-500" />
           )}
         </div>
 
         {/* Title */}
-        <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
           {project.title}
         </h2>
 
         {/* Description */}
-        <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow line-clamp-3">
+        <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow line-clamp-3">
           {project.description}
         </p>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300"
-            >
+            <span key={tag} className="tag text-xs">
               {tag}
             </span>
           ))}
         </div>
 
         {/* Links */}
-        <div className="flex gap-3 pt-4 border-t border-gray-100 dark:border-gray-700">
+        <div className="flex gap-4 pt-4 border-t border-gray-200 dark:border-terminal-border">
           {project.demoUrl && (
             <a
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-light transition-colors"
             >
               <ExternalLink className="w-4 h-4" />
-              Live Demo
+              Demo
             </a>
           )}
           {project.githubUrl && (
@@ -101,10 +96,10 @@ function ProjectCard({ project }: { project: Project }) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
             >
               <Github className="w-4 h-4" />
-              Source Code
+              Source
             </a>
           )}
         </div>
@@ -145,13 +140,12 @@ export default function Projects() {
   return (
     <div className="max-w-6xl mx-auto">
       {/* Page header */}
-      <header className="mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          Projects
+      <header className="mb-10">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white font-mono mb-3">
+          <span className="text-accent">#</span> projects
         </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
-          A collection of projects I've worked on. From web applications to
-          CLI tools, here's what I've been building.
+        <p className="text-gray-600 dark:text-gray-400">
+          A collection of projects I've worked on. From web applications to infrastructure tools.
         </p>
       </header>
 
@@ -159,11 +153,11 @@ export default function Projects() {
       {allTags.length > 0 && (
         <div className="mb-8">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300 mr-2">
-              Filter by technology:
+            <span className="text-sm font-mono text-gray-500 dark:text-gray-400 mr-2">
+              filter:
             </span>
             <TagButton
-              tag="All"
+              tag="all"
               isActive={activeTag === null}
               onClick={() => setActiveTag(null)}
             />
@@ -186,11 +180,11 @@ export default function Projects() {
           {featuredProjects.length > 0 && (
             <section>
               {!activeTag && (
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-                  Featured Projects
+                <h2 className="text-lg font-semibold text-gray-900 dark:text-white font-mono mb-6">
+                  <span className="text-accent">&gt;</span> featured
                 </h2>
               )}
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+              <div className="grid gap-6 md:grid-cols-2">
                 {featuredProjects.map((project) => (
                   <ProjectCard key={project.title} project={project} />
                 ))}
@@ -202,8 +196,8 @@ export default function Projects() {
           {regularProjects.length > 0 && (
             <section>
               {!activeTag && featuredProjects.length > 0 && (
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-                  Other Projects
+                <h2 className="text-lg font-semibold text-gray-900 dark:text-white font-mono mb-6">
+                  <span className="text-accent">&gt;</span> other
                 </h2>
               )}
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -223,15 +217,15 @@ export default function Projects() {
               </p>
               <button
                 onClick={() => setActiveTag(null)}
-                className="mt-2 text-blue-600 dark:text-blue-400 hover:underline"
+                className="mt-2 text-accent hover:text-accent-light transition-colors"
               >
                 Clear filter
               </button>
             </>
           ) : (
             <>
-              <div className="text-6xl mb-4">-</div>
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+              <div className="text-4xl mb-4 font-mono text-accent">{'[ ]'}</div>
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 font-mono">
                 No projects yet
               </h2>
               <p className="text-gray-600 dark:text-gray-400">

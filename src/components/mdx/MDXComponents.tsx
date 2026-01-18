@@ -16,7 +16,7 @@ function H1({ className, children, ...props }: HeadingProps) {
   return (
     <h1
       className={cn(
-        'scroll-m-20 text-4xl font-bold tracking-tight text-gray-900 dark:text-white mt-8 mb-4 first:mt-0',
+        'scroll-m-20 text-3xl font-bold tracking-tight text-gray-900 dark:text-white mt-8 mb-4 first:mt-0 font-mono',
         className
       )}
       {...props}
@@ -30,12 +30,12 @@ function H2({ className, children, ...props }: HeadingProps) {
   return (
     <h2
       className={cn(
-        'scroll-m-20 text-3xl font-semibold tracking-tight text-gray-900 dark:text-white mt-10 mb-4 border-b border-gray-200 dark:border-gray-700 pb-2',
+        'scroll-m-20 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white mt-10 mb-4 border-b border-gray-200 dark:border-terminal-border pb-2 font-mono',
         className
       )}
       {...props}
     >
-      {children}
+      <span className="text-accent">#</span> {children}
     </h2>
   );
 }
@@ -44,7 +44,7 @@ function H3({ className, children, ...props }: HeadingProps) {
   return (
     <h3
       className={cn(
-        'scroll-m-20 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white mt-8 mb-4',
+        'scroll-m-20 text-xl font-semibold tracking-tight text-gray-900 dark:text-white mt-8 mb-4 font-mono',
         className
       )}
       {...props}
@@ -58,7 +58,7 @@ function H4({ className, children, ...props }: HeadingProps) {
   return (
     <h4
       className={cn(
-        'scroll-m-20 text-xl font-semibold tracking-tight text-gray-900 dark:text-white mt-6 mb-3',
+        'scroll-m-20 text-lg font-semibold tracking-tight text-gray-900 dark:text-white mt-6 mb-3',
         className
       )}
       {...props}
@@ -91,7 +91,7 @@ function A({ className, href, children, ...props }: AnchorProps) {
     <a
       href={href}
       className={cn(
-        'font-medium text-blue-600 dark:text-blue-400 underline underline-offset-4 hover:text-blue-800 dark:hover:text-blue-300 transition-colors',
+        'font-medium text-accent hover:text-accent-light underline underline-offset-4 transition-colors',
         className
       )}
       {...(isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
@@ -111,7 +111,7 @@ function Code({ className, children, ...props }: CodeProps) {
     return (
       <code
         className={cn(
-          'relative rounded bg-gray-100 dark:bg-gray-800 px-[0.4rem] py-[0.2rem] font-mono text-sm text-gray-900 dark:text-gray-100',
+          'relative rounded-sharp bg-gray-100 dark:bg-terminal-surface px-[0.4rem] py-[0.2rem] font-mono text-sm text-accent',
           className
         )}
         {...props}
@@ -133,7 +133,7 @@ function Pre({ className, children, ...props }: PreProps) {
   return (
     <pre
       className={cn(
-        'mb-4 mt-6 overflow-x-auto rounded-lg bg-gray-900 dark:bg-gray-950 p-4 border border-gray-200 dark:border-gray-800',
+        'mb-4 mt-6 overflow-x-auto rounded-sharp bg-terminal-bg p-4 border border-terminal-border',
         className
       )}
       {...props}
@@ -148,7 +148,7 @@ function Blockquote({ className, children, ...props }: BlockquoteProps) {
   return (
     <blockquote
       className={cn(
-        'mt-6 border-l-4 border-blue-500 dark:border-blue-400 pl-6 italic text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800/50 py-4 pr-4 rounded-r-lg',
+        'mt-6 border-l-4 border-accent pl-6 italic text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-terminal-surface/50 py-4 pr-4 rounded-r-sharp',
         className
       )}
       {...props}
@@ -163,7 +163,7 @@ function Ul({ className, children, ...props }: ListProps) {
   return (
     <ul
       className={cn(
-        'my-6 ml-6 list-disc text-gray-700 dark:text-gray-300 [&>li]:mt-2',
+        'my-6 ml-6 list-disc text-gray-700 dark:text-gray-300 [&>li]:mt-2 marker:text-accent',
         className
       )}
       {...props}
@@ -178,7 +178,7 @@ function Ol({ className, children, ...props }: ComponentPropsWithoutRef<'ol'>) {
   return (
     <ol
       className={cn(
-        'my-6 ml-6 list-decimal text-gray-700 dark:text-gray-300 [&>li]:mt-2',
+        'my-6 ml-6 list-decimal text-gray-700 dark:text-gray-300 [&>li]:mt-2 marker:text-accent',
         className
       )}
       {...props}
@@ -204,7 +204,7 @@ function Li({ className, children, ...props }: ListItemProps) {
 function Hr({ className, ...props }: ComponentPropsWithoutRef<'hr'>) {
   return (
     <hr
-      className={cn('my-8 border-gray-200 dark:border-gray-700', className)}
+      className={cn('my-8 border-gray-200 dark:border-terminal-border', className)}
       {...props}
     />
   );
@@ -252,7 +252,7 @@ function Th({ className, children, ...props }: ComponentPropsWithoutRef<'th'>) {
   return (
     <th
       className={cn(
-        'border border-gray-200 dark:border-gray-700 px-4 py-2 text-left font-bold bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white',
+        'border border-gray-200 dark:border-terminal-border px-4 py-2 text-left font-bold font-mono bg-gray-50 dark:bg-terminal-surface text-gray-900 dark:text-white',
         className
       )}
       {...props}
@@ -266,7 +266,7 @@ function Td({ className, children, ...props }: ComponentPropsWithoutRef<'td'>) {
   return (
     <td
       className={cn(
-        'border border-gray-200 dark:border-gray-700 px-4 py-2 text-gray-700 dark:text-gray-300',
+        'border border-gray-200 dark:border-terminal-border px-4 py-2 text-gray-700 dark:text-gray-300',
         className
       )}
       {...props}
@@ -280,7 +280,7 @@ function Td({ className, children, ...props }: ComponentPropsWithoutRef<'td'>) {
 function Img({ className, alt, ...props }: ComponentPropsWithoutRef<'img'>) {
   return (
     <img
-      className={cn('rounded-lg border border-gray-200 dark:border-gray-700 my-6', className)}
+      className={cn('rounded-sharp border border-gray-200 dark:border-terminal-border my-6', className)}
       alt={alt}
       {...props}
     />

@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom';
 import { getAllBlogPosts, getAllTags } from '@/lib/blog';
 import { formatDate, cn } from '@/lib/utils';
 import { BlogPost } from '@/types';
+import { Calendar, Clock } from 'lucide-react';
 
 // Loading skeleton component
 function BlogPostSkeleton() {
   return (
     <div className="animate-pulse">
-      <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mb-3" />
-      <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/4 mb-3" />
-      <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-full mb-2" />
-      <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-5/6" />
+      <div className="h-5 bg-gray-200 dark:bg-terminal-surface rounded w-3/4 mb-3" />
+      <div className="h-4 bg-gray-200 dark:bg-terminal-surface rounded w-1/4 mb-3" />
+      <div className="h-4 bg-gray-200 dark:bg-terminal-surface rounded w-full mb-2" />
+      <div className="h-4 bg-gray-200 dark:bg-terminal-surface rounded w-5/6" />
     </div>
   );
 }
@@ -30,10 +31,10 @@ function TagButton({
     <button
       onClick={onClick}
       className={cn(
-        'px-3 py-1 rounded-full text-sm font-medium transition-colors',
+        'px-3 py-1 rounded-sharp text-sm font-mono transition-all duration-200',
         isActive
-          ? 'bg-blue-600 text-white'
-          : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+          ? 'bg-accent text-white'
+          : 'tag hover:border-accent hover:text-accent'
       )}
     >
       {tag}
@@ -47,37 +48,39 @@ function BlogPostCard({ post }: { post: BlogPost }) {
     <article className="group">
       <Link
         to={`/blog/${post.slug}`}
-        className="block p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg transition-all duration-200"
+        className="block card-terminal p-5 hover-glow h-full"
       >
         {/* Title */}
-        <h2 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-2">
           {post.title}
         </h2>
 
         {/* Meta info */}
-        <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-3">
-          <time dateTime={post.date}>{formatDate(post.date)}</time>
-          <span className="hidden sm:inline">-</span>
-          <span>{post.readingTime} min read</span>
+        <div className="flex flex-wrap items-center gap-3 text-xs text-gray-500 dark:text-gray-400 font-mono mb-3">
+          <span className="inline-flex items-center">
+            <Calendar className="w-3 h-3 mr-1" />
+            <time dateTime={post.date}>{formatDate(post.date)}</time>
+          </span>
+          <span className="inline-flex items-center">
+            <Clock className="w-3 h-3 mr-1" />
+            {post.readingTime}m
+          </span>
           {post.draft && (
-            <span className="px-2 py-0.5 rounded bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs font-medium">
+            <span className="px-2 py-0.5 rounded-sharp bg-yellow-500/20 text-yellow-600 dark:text-yellow-400 text-xs font-medium">
               Draft
             </span>
           )}
         </div>
 
         {/* Description */}
-        <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
+        <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
           {post.description}
         </p>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2">
           {post.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300"
-            >
+            <span key={tag} className="tag text-xs">
               {tag}
             </span>
           ))}
@@ -102,8 +105,8 @@ function BlogPostList() {
   if (posts.length === 0) {
     return (
       <div className="text-center py-16">
-        <div className="text-6xl mb-4">-</div>
-        <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+        <div className="text-4xl mb-4 font-mono text-accent">{'{ }'}</div>
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 font-mono">
           No posts yet
         </h2>
         <p className="text-gray-600 dark:text-gray-400">
@@ -119,11 +122,11 @@ function BlogPostList() {
       {tags.length > 0 && (
         <div className="mb-8">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300 mr-2">
-              Filter by tag:
+            <span className="text-sm font-mono text-gray-500 dark:text-gray-400 mr-2">
+              filter:
             </span>
             <TagButton
-              tag="All"
+              tag="all"
               isActive={activeTag === null}
               onClick={() => setActiveTag(null)}
             />
@@ -140,7 +143,7 @@ function BlogPostList() {
       )}
 
       {/* Posts grid */}
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-2">
         {filteredPosts.map((post) => (
           <BlogPostCard key={post.slug} post={post} />
         ))}
@@ -154,7 +157,7 @@ function BlogPostList() {
           </p>
           <button
             onClick={() => setActiveTag(null)}
-            className="mt-2 text-blue-600 dark:text-blue-400 hover:underline"
+            className="mt-2 text-accent hover:text-accent-light transition-colors"
           >
             Clear filter
           </button>
@@ -169,24 +172,21 @@ export default function Blog() {
   return (
     <div className="max-w-4xl mx-auto">
       {/* Page header */}
-      <header className="mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          Blog
+      <header className="mb-10">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white font-mono mb-3">
+          <span className="text-accent">#</span> blog
         </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
-          Thoughts on software engineering, web development, and beyond.
+        <p className="text-gray-600 dark:text-gray-400">
+          Thoughts on software engineering, infrastructure, and systems design.
         </p>
       </header>
 
       {/* Blog posts with Suspense */}
       <Suspense
         fallback={
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2">
             {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="p-6 rounded-xl border border-gray-200 dark:border-gray-700"
-              >
+              <div key={i} className="card-terminal p-5">
                 <BlogPostSkeleton />
               </div>
             ))}
