@@ -1,0 +1,242 @@
+/* Google Fonts - JetBrains Mono for terminal aesthetic */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Custom Properties for theming */
+:root {
+  --color-accent: #06B6D4;
+  --color-accent-light: #22D3EE;
+  --color-accent-glow: rgba(6, 182, 212, 0.2);
+  --color-bg: #FAFAFA;
+  --color-surface: #F4F4F5;
+  --color-border: #E4E4E7;
+  --color-text: #09090B;
+  --color-text-muted: #52525B;
+}
+
+.dark {
+  --color-bg: #0A0A0F;
+  --color-surface: #18181B;
+  --color-border: #27272A;
+  --color-text: #FAFAFA;
+  --color-text-muted: #A1A1AA;
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Remove default margin and padding */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Remove built-in form typography styles */
+  input, button, textarea, select {
+    font: inherit;
+  }
+
+  /* Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  /* Create a root stacking context */
+  #root {
+    isolation: isolate;
+    min-height: 100vh;
+  }
+
+  /* Selection styling */
+  ::selection {
+    background-color: rgba(6, 182, 212, 0.3);
+    color: inherit;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* Terminal-style card */
+  .card-terminal {
+    @apply bg-white dark:bg-terminal-surface border border-gray-200 dark:border-terminal-border rounded-sharp;
+    @apply transition-all duration-200;
+  }
+
+  .card-terminal:hover {
+    @apply border-accent/50 shadow-glow-sm;
+  }
+
+  /* Terminal prompt styling */
+  .terminal-prompt {
+    @apply font-mono text-accent;
+  }
+
+  .terminal-prompt::before {
+    content: '$ ';
+    @apply text-accent/70;
+  }
+
+  /* Frosted glass effect */
+  .glass {
+    @apply bg-white/80 dark:bg-terminal-bg/80 backdrop-blur-lg;
+  }
+
+  /* Glow button */
+  .btn-glow {
+    @apply relative overflow-hidden;
+    @apply bg-accent text-white font-medium;
+    @apply px-6 py-3 rounded-sharp;
+    @apply transition-all duration-200;
+  }
+
+  .btn-glow:hover {
+    @apply shadow-glow scale-[1.02];
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply border border-gray-300 dark:border-terminal-border;
+    @apply text-gray-700 dark:text-gray-300 font-medium;
+    @apply px-6 py-3 rounded-sharp;
+    @apply transition-all duration-200;
+  }
+
+  .btn-ghost:hover {
+    @apply border-accent text-accent;
+  }
+
+  /* Tag/badge styling */
+  .tag {
+    @apply inline-flex items-center px-2.5 py-1 rounded-sharp text-xs font-mono;
+    @apply bg-gray-100 dark:bg-terminal-surface text-gray-700 dark:text-gray-300;
+    @apply border border-gray-200 dark:border-terminal-border;
+    @apply transition-colors duration-200;
+  }
+
+  .tag:hover {
+    @apply border-accent/50 text-accent;
+  }
+
+  .tag-accent {
+    @apply bg-accent/10 text-accent border-accent/30;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  /* Hide scrollbar while maintaining scroll functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Text balance for better typography */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Gradient text utility */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+  }
+
+  /* Focus visible styles for accessibility - updated for accent */
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent;
+  }
+
+  /* Glow effect utilities */
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+  }
+
+  .glow-accent-sm {
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+  }
+
+  /* Border glow on hover */
+  .hover-glow {
+    @apply transition-shadow duration-200;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Grid/dot pattern backgrounds */
+  .bg-grid {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2306B6D4' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .dark .bg-grid {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2306B6D4' fill-opacity='0.07'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .bg-dots {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2306B6D4' fill-opacity='0.05'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .dark .bg-dots {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2306B6D4' fill-opacity='0.1'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Cursor blink animation */
+  .cursor-blink::after {
+    content: '▋';
+    @apply text-accent animate-blink ml-0.5;
+  }
+
+  /* Typewriter container */
+  .typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typewriter 2s steps(40) forwards;
+  }
+
+  /* Stagger animation delays */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition-property: background-color, border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+/* Disable transitions on page load to prevent flash */
+.no-transitions * {
+  transition: none !important;
+}

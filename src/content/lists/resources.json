@@ -1,0 +1,37 @@
+[
+  {
+    "title": "React Documentation",
+    "description": "Official React docs with interactive examples and tutorials",
+    "category": "learning",
+    "tags": ["react", "frontend", "javascript"],
+    "url": "https://react.dev/"
+  },
+  {
+    "title": "The Missing Semester of Your CS Education",
+    "description": "MIT course covering essential developer tools like shell, vim, git",
+    "category": "learning",
+    "tags": ["shell", "git", "vim", "tools"],
+    "url": "https://missing.csail.mit.edu/"
+  },
+  {
+    "title": "roadmap.sh",
+    "description": "Community-driven roadmaps, guides and resources for developers",
+    "category": "learning",
+    "tags": ["roadmap", "career", "learning-path"],
+    "url": "https://roadmap.sh/"
+  },
+  {
+    "title": "Refactoring.Guru",
+    "description": "Design patterns and refactoring techniques explained with examples",
+    "category": "reference",
+    "tags": ["design-patterns", "refactoring", "architecture"],
+    "url": "https://refactoring.guru/"
+  },
+  {
+    "title": "ByteByteGo",
+    "description": "System design concepts explained with clear visualizations",
+    "category": "learning",
+    "tags": ["system-design", "architecture", "backend"],
+    "url": "https://bytebytego.com/"
+  }
+]

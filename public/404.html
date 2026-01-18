@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found | Abhishek Kumar</title>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // This script takes the current URL and converts the path and query
+      // string into just a query string, and then redirects the browser
+      // to the new url with only a query string and hash fragment.
+      // This allows the SPA's router to handle the route properly.
+
+      (function() {
+        var pathSegmentsToKeep = 0; // For user/org pages (username.github.io), keep 0 segments
+
+        var l = window.location;
+        var path = l.pathname.split('/').filter(Boolean);
+        var query = l.search;
+        var hash = l.hash;
+
+        // Preserve the path after the base segments
+        var redirectPath = path.slice(pathSegmentsToKeep).join('/');
+
+        // Build the redirect URL
+        var redirectUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/' +
+          '?p=/' + redirectPath +
+          (query ? '&q=' + encodeURIComponent(query.slice(1)) : '') +
+          hash;
+
+        l.replace(redirectUrl);
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <h1>Page Not Found</h1>
+      <p>The page you're looking for doesn't exist.</p>
+      <p><a href="/">Go to Homepage</a></p>
+    </noscript>
+  </body>
+</html>

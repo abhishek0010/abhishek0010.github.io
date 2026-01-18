@@ -1,0 +1,58 @@
+[
+  {
+    "name": "VS Code",
+    "description": "Primary code editor with extensive extensions ecosystem",
+    "category": "development",
+    "url": "https://code.visualstudio.com/",
+    "favorite": true
+  },
+  {
+    "name": "Neovim",
+    "description": "Hyper-extensible Vim-based text editor for quick edits",
+    "category": "development",
+    "url": "https://neovim.io/",
+    "favorite": true
+  },
+  {
+    "name": "Docker",
+    "description": "Containerization platform for consistent development environments",
+    "category": "development",
+    "url": "https://www.docker.com/",
+    "favorite": true
+  },
+  {
+    "name": "Figma",
+    "description": "Collaborative design tool for UI/UX prototyping",
+    "category": "design",
+    "url": "https://www.figma.com/",
+    "favorite": false
+  },
+  {
+    "name": "Notion",
+    "description": "All-in-one workspace for notes, docs, and project management",
+    "category": "productivity",
+    "url": "https://www.notion.so/",
+    "favorite": true
+  },
+  {
+    "name": "Warp",
+    "description": "Modern terminal with AI-powered command suggestions",
+    "category": "development",
+    "url": "https://www.warp.dev/",
+    "favorite": true
+  },
+  {
+    "name": "Raycast",
+    "description": "Productivity launcher replacing Spotlight on macOS",
+    "category": "productivity",
+    "url": "https://www.raycast.com/",
+    "favorite": true
+  },
+  {
+    "name": "Excalidraw",
+    "description": "Virtual whiteboard for sketching diagrams and architecture",
+    "category": "design",
+    "url": "https://excalidraw.com/",
+    "favorite": false
+  }
+]
